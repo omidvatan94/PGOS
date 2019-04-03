@@ -1,4 +1,4 @@
-# Apostrophe: The Back End
+# PGOS: The Back End
 
 This Rails app was deisgned to handle the database and API for PGOS, a system designed to house a list of work orders for Perfectly Ground Coffee, and for creating new work orders
 
