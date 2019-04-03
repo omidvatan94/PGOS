@@ -1,6 +1,6 @@
 # PGOS
 
-PGOS is a full stack application designed for managing orders for Perfectly Ground pre-packaged coffee. The frontend and backend can be found in their respective directories within this repository, and this README will go over architecture and installation instructions to run this app on your local environment.
+PGOS is a full stack application designed for managing orders for Perfectly Ground pre-packaged coffee. The frontend and backend can be found in their respective directories within this repository, and this README will go over architecture and installation instructions to run this app on your local environment. You may begin by cloning this repository to your computer.
 
 # PGOS: The Back End
 
@@ -21,7 +21,7 @@ This app was created by running ```rails new pgos-backend --api --database=postg
 
 ## Installation
 
-To get started with this application, fork and clone the repository to your hard drive. ```CD``` into the project folder ```pgos-backend``` and run ```bundle install```. Once the gems have been installed, run ```rake db:setup``` to establish the database. Make sure you have [postgreSQL](https://postgresapp.com/) installed and already running. Run ```rails start``` once the database has been set up to host the backend on your local server.
+To get started with this application, clone the repository to your hard drive. ```CD``` into the project folder ```pgos-backend``` and run ```bundle install```. Once the gems have been installed, run ```rake db:setup``` to establish the database. Make sure you have [postgreSQL](https://postgresapp.com/) installed and already running. Run ```rails start``` once the database has been set up to host the backend on your local server.
 
 ## Testing
 
@@ -83,7 +83,7 @@ PGOS was built using [create-react-app](https://github.com/facebook/create-react
 ## Installation
 
   **Ensure you have first visited the pgos-backend directory for instructions to run local server. Ensure you are in this project's backend directory and that you have run ```rails s``` to start local server**
-To get started with PGOS, fork this repository and clone it to your hard drive. ```CD``` into the folder ```pgos-frontend``` and run ```npm install```. Once the dependencies have been installed, you can run ```npm start``` to get your app running. Your locally-hosted version of the app, like the live version, will receive information from a Ruby on Rails backend hosted at localhost:3000.
+To get started with PGOS, clone this repository to your hard drive. ```CD``` into the folder ```pgos-frontend``` and run ```npm install```. Once the dependencies have been installed, you can run ```npm start``` to get your app running. Your locally-hosted version of the app, like the live version, will receive information from a Ruby on Rails backend hosted at localhost:3000.
 
 ## Testing
 
