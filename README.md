@@ -51,13 +51,14 @@ Adding password encryption, getting an SSL certificate, and handling sessions wi
 Download Heroku CLI if you have not already by running ```brew tap heroku/brew && brew install heroku```
 
 Then, run ```heroku login``` which will prompt you to enter your credentials, which will be saved for future use.
-``git init
+
+`git init
 git add .
 git commit -m "init"
 heroku create
 git push heroku master
 heroku run rake db:migrate
-heroku open``
+heroku open`
 
 Once this app is deployed and is not being run on the local host, the URLs of the fetch requests localed in the frontend must be changed to accomodate requests to heroku server. Change "http://localhost:3000/api/v1/orders" to "https://pgos-bac-end.herokuapp.com/api/v1/orders/"
 
@@ -128,12 +129,12 @@ Download Heroku CLI if you have not already by running ```brew tap heroku/brew &
 
 Then, run ```heroku login``` which will prompt you to enter your credentials, which will be saved for future use.
 
-``cd pgos-frontend
+`cd pgos-frontend
 git init
 heroku create pgos-frontend --buildpack mars/create-react-app
 git add .
 git commit -m "Start with create-react-app"
 git push heroku master
-heroku open``
+heroku open`
 
 Here, heroku will go through the build process with you and install npm, node, and yarn, as well as any other packages. Note: If the backend of the project has been deployed to heroku, the fetch requests in this app must have their URLs changed to accomodate fetching from heroku server instead of local server. Change "http://localhost:3000/api/v1/orders" to "https://pgos-bac-end.herokuapp.com/api/v1/orders/"
