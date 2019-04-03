@@ -17,7 +17,7 @@ This app was created by running ```rails new pgos-backend --api --database=postg
 
 ## Installation
 
-To get started with this application, fork and clone the respository to your hard drive. ```CD``` into the project folder and run ```bundle install```. Once the gems have been installed, run ```rake db:setup``` to establish the database. Make sure you have [postgreSQL](https://postgresapp.com/) installed and already running. Run ```rails start``` once the database has been set up to host the backend on your local server.
+To get started with this application, fork and clone the respository to your hard drive. ```CD``` into the project folder ```pgos-backend``` and run ```bundle install```. Once the gems have been installed, run ```rake db:setup``` to establish the database. Make sure you have [postgreSQL](https://postgresapp.com/) installed and already running. Run ```rails start``` once the database has been set up to host the backend on your local server.
 
 ## Testing
 
