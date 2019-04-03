@@ -1,6 +1,6 @@
 # PGOS: The Back End
 
-This Rails app was deisgned to handle the database and API for PGOS, a system designed to house a list of work orders for Perfectly Ground Coffee, and for creating new work orders
+This Rails app was designed to handle the database and API for PGOS, a system designed to house a list of work orders for Perfectly Ground Coffee, and for creating new work orders
 
 ## Contents
 
@@ -20,7 +20,7 @@ To get started with this application, fork and clone the respository to your har
 
 ## Testing
 
-This app's tests are run with rspec. In order to run the test suite, run ```rspec```. In development, if you wish to run the test suite automatically, run ```guard```. The ``guard-rspec`` gem allows for the test suite to run automatically whenever the files being watched are saved.
+This app's tests are written with rspec and the test suite can be run by running ```rspec```. In development, if you wish to run the test suite automatically, run ```guard```. The ``guard-rspec`` gem allows for the test suite to run automatically whenever the files being watched are saved.
 
 ## Models
 
@@ -35,7 +35,7 @@ The ```Order``` model handles the main functionality of our app, which is to vie
 
 ### Secure Login
 
-Adding password encryption, getting an SSL certificate, and handling sessions with JSON Web Tokens is the next feature to be implimented.
+Adding password encryption, getting an SSL certificate, and handling sessions with JSON Web Tokens is the next feature to be implemented. This would also require the creation of a more complex relationship structure with a model for Users and a join table.
 
 ### Deployment
 
@@ -46,3 +46,5 @@ heroku create
 git push heroku master
 heroku run rake db:migrate
 heroku open```
+
+Once this app is deployed and is not being run on the local host, the URLs of the fetch requests localed in the frontend must be changed to accomodate requests to heroku server. Change "http://localhost:3000/api/v1/orders" to "https://pgos-bac-end.herokuapp.com/api/v1/orders/"

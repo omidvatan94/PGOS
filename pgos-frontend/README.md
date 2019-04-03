@@ -9,6 +9,7 @@ This React web app was designed to be a responsive front-end used for creating a
 - [Testing](#testing)
 - [Structure](#structure)
 - [Components](#components)
+- [Trade Offs](#trade-offs)
 - [Future Development and Deployment](#future-development-and-deployment)
 
 ## Libraries & Middleware
@@ -32,7 +33,7 @@ The `src` folder includes two main folders: `containers`, and `components` which
 
 ## Components
 
-Apostrophe is composed of three main components:
+PGOS is composed of three main components:
 
 ### App
 
@@ -45,6 +46,10 @@ This component is responsible for the top-panel that appears when the app is ren
 ### OrderForm
 
 The `OrderForm` component is rendered within a Modal, and is responsible for capturing the necessary data from user input to create a new Order in the database. When the form fields are changed, the state within the component is updated. Upon successful submission of the form, the state within this component is sent in a POST request to our database, creating a new instance of an Order.
+
+## Trade offs
+
+This React app does not implement Redux, or a CSS framework such as bootstrap. This was done in order to accomodate the 8 hour time limit for this project, as well as to manage the limited components needed to meet deliverables. Redux is excellent at managing react apps with many components, and early implementation of redux assists in managing growth of apps. This app is mostly functional and therefore does not feature much in terms of CSS. Instead, table and modal react components are imported to facilitate functionality of app and meet all deliverables.  
 
 ## Future Development and Deployment
 
@@ -68,4 +73,4 @@ git commit -m "Start with create-react-app"
 git push heroku master
 heroku open```
 
-Here, heroku will go through the build process with you and install npm, node, and yarn, as well as any other packages.
+Here, heroku will go through the build process with you and install npm, node, and yarn, as well as any other packages. Note: If the backend of the project has been deployed to heroku, the fetch requests in this app must have their URLs changed to accomodate fetching from heroku server instead of local server.
