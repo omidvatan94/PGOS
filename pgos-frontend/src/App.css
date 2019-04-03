@@ -46,7 +46,7 @@ top: 0px;
 
 
 #left {
-  display: block;
+  position: absolute;
   float: left;
 }
 

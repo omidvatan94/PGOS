@@ -1,68 +1,69 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# PGOS: The Front End
 
-## Available Scripts
+This React web app was designed to be a responsive front-end used for creating and viewing work orders for Perfectly Ground pre-packaged coffee. Follow the instructions for hosting the back-end on your local server.  
 
-In the project directory, you can run:
+## Contents
 
-### `npm start`
+- [Libraries & Middleware](#libraries--middleware)
+- [Installation](#installation)
+- [Testing](#testing)
+- [Structure](#structure)
+- [Components](#components)
+- [Future Development and Deployment](#future-development and deployment)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Libraries & Middleware
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+PGOS was built using [create-react-app](https://github.com/facebook/create-react-app) and comes with the dependencies therein. [ReactTable](https://www.npmjs.com/package/react-table) is used for rendering the list of work orders from the database into appropriate columns and cells. [React StarRatingComponent](https://github.com/voronianski/react-star-rating-component) is used for rendering star icons next to work orders that have been marked as "Priority" [React Modal](https://reactcommunity.org/react-modal/) handles rendering a Modal that houses the order form for creating new work orders. Style prop allows Modal to transform size to accomodate adding or removing of form elements in the future. [React Moment](https://www.npmjs.com/package/react-moment) manages the display of current date on the home page.
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  **Ensure you have first visited [this](https://www.npmjs.com/package/react-moment) respository to run local server. Ensure you are in this project's backend directory and that you have run ```rails s``` to start local server**
+To get started with PGOS, fork this repository and clone it to your hard drive. CD into the folder and run ```npm install```. Once the dependencies have been installed, you can run ```npm start``` to get your app running. Your locally-hosted version of the app, like the live version, will receive information from a Ruby on Rails backend hosted at localhost:3000 For more information about how the back-end is structured, visit [this](https://github.com/omidvatan94/PGOS-front-end) repository.
 
-### `npm run build`
+## Testing
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In development, run ```npm test``` to open the test suite. Any time a file is changed in the src folder, the test suite will run automatically.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The top-level folder of Apostrophe includes a `public` folder, which holds the `index.html` file where the app is officially rendered by React, an `src` folder which holds the application itself, and then a few other files: the .gitignore, README, and package.json.
 
-### `npm run eject`
+The `src` folder includes two main folders: `containers`, and `components` which organizes the bulk of the app's logic and content. Parent elements can be located in the `containers` folder and their Child elements are located in the `containers` folder. This is organized to ensure that as the project grows, components can be organized by their responsibilities. `index.js` handles how the app is mounted into the `index.html` file in the top-level folder.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Components
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Apostrophe is composed of three main components:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### App
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The `App` component houses the entire application. All other components will be rendered within this component. The corresponding .css file in the `App` folder rules all styling within the app. An informational page, `info.js`, is also stored within this folder.
 
-## Learn More
+### Header
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This component is responsible for the top-panel that appears when the app is rendered. Header is responsible for rendering the current date, and housing the button for launching the Modal necessary for creating a new work order.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### OrderForm
 
-### Code Splitting
+The `OrderForm` component is rendered within a Modal, and is responsible for capturing the necessary data from user input to create a new Order in the database. When the form fields are changed, the state within the component is updated. Upon successful submission of the form, the state within this component is sent in a POST request to our database, creating a new instance of an Order.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Future Development and Deployment
 
-### Analyzing the Bundle Size
+Some ideas for features to add in the future:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+### Creating a View Button for Rendering a Single Work Order.
 
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Currently there are only Creating and Reading actions supported by this app. In order to support Updating and Deleting actions, we would need to be able to isolate and read a single work order, and render it to the window or in another Modal.
 
 ### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+Download Heroku CLI if you have not already by running ```brew tap heroku/brew && brew install heroku```
 
-### `npm run build` fails to minify
+Then, run ```heroku login``` which will prompt you to enter your credentials, which will be saved for future use.```cd pgos-frontend
+git init
+heroku create pgos-frontend --buildpack mars/create-react-app
+git add .
+git commit -m "Start with create-react-app"
+git push heroku master
+heroku open```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Here, heroku will go through the build process with you and install npm, node, and yarn, as well as any other packages. 

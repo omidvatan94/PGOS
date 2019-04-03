@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import Header from "./containers/Header"
 import ReactTable from "react-table"
-import Header from "./Header"
-import 'react-table/react-table.css'
 import StarRatingComponent from 'react-star-rating-component';
 import './App.css';
+import 'react-table/react-table.css'
 
 class App extends Component {
 
@@ -36,6 +36,8 @@ class App extends Component {
   render() {
 
     const data = this.state.orders
+
+    let sortedList = data.sort((a, b) => new Date(...a.ship_date.split('/').reverse()) - new Date(...b.ship_date.split('/').reverse()));
 
     const columns = [{
       Header: 'Coffee',
@@ -78,7 +80,7 @@ class App extends Component {
           sortable={false}
           showPaginationBottom={true}
           defaultPageSize={25}
-          data={data}
+          data={sortedList}
           columns={columns}
           />
       </div>

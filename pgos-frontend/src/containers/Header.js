@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import Moment from 'react-moment';
 import Modal from 'react-modal';
-import OrderForm from "./OrderForm"
+import OrderForm from "../components/OrderForm"
 
 class Header extends PureComponent {
 
@@ -35,7 +35,9 @@ class Header extends PureComponent {
     return (
       <div>
       <br></br>
+      <div id="left">
             <Moment format="MM/DD"/>
+      </div>
             <div className="title">
               Perfectly Ground Work Orders
             </div>
