@@ -1,9 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+import { shallow } from 'enzyme';
+
+import App from './App';
+import Header from './Header'
+import OrderForm from './OrderForm'
+
+it('App renders without crashing', () => {
+  shallow(<App />)
+});
+
+it('Header renders without crashing', () => {
+  shallow(<Header />)
+});
+
+it('Order Form renders without crashing', () => {
+  shallow(<OrderForm />)
 });
