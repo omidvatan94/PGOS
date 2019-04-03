@@ -1,6 +1,6 @@
 # PGOS: The Front End
 
-This React web app was designed to be a responsive front-end used for creating and viewing work orders for Perfectly Ground pre-packaged coffee. Follow the instructions for hosting the back-end on your local server.  
+This React web app was designed to be a responsive front-end used for creating and viewing work orders for Perfectly Ground pre-packaged coffee. Follow the instructions in pgos-backend for hosting the back-end on your local server.  
 
 ## Contents
 
@@ -18,8 +18,8 @@ PGOS was built using [create-react-app](https://github.com/facebook/create-react
 
 ## Installation
 
-  **Ensure you have first visited [this](https://www.npmjs.com/package/react-moment) respository to run local server. Ensure you are in this project's backend directory and that you have run ```rails s``` to start local server**
-To get started with PGOS, fork this repository and clone it to your hard drive. CD into the folder and run ```npm install```. Once the dependencies have been installed, you can run ```npm start``` to get your app running. Your locally-hosted version of the app, like the live version, will receive information from a Ruby on Rails backend hosted at localhost:3000 For more information about how the back-end is structured, visit [this](https://github.com/omidvatan94/PGOS-front-end) repository.
+  **Ensure you have first visited the pgos-backend directory for instructions to run local server. Ensure you are in this project's backend directory and that you have run ```rails s``` to start local server**
+To get started with PGOS, fork this repository and clone it to your hard drive. CD into the folder and run ```npm install```. Once the dependencies have been installed, you can run ```npm start``` to get your app running. Your locally-hosted version of the app, like the live version, will receive information from a Ruby on Rails backend hosted at localhost:3000.
 
 ## Testing
 
@@ -73,4 +73,4 @@ git commit -m "Start with create-react-app"
 git push heroku master
 heroku open```
 
-Here, heroku will go through the build process with you and install npm, node, and yarn, as well as any other packages. Note: If the backend of the project has been deployed to heroku, the fetch requests in this app must have their URLs changed to accomodate fetching from heroku server instead of local server.
+Here, heroku will go through the build process with you and install npm, node, and yarn, as well as any other packages. Note: If the backend of the project has been deployed to heroku, the fetch requests in this app must have their URLs changed to accomodate fetching from heroku server instead of local server. Change "http://localhost:3000/api/v1/orders" to "https://pgos-bac-end.herokuapp.com/api/v1/orders/"

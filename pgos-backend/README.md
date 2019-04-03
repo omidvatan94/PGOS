@@ -8,6 +8,7 @@ This Rails app was designed to handle the database and API for PGOS, a system de
 - [Installation](#installation)
 - [Testing](#testing)
 - [Models](#models)
+- [Trade Offs](#trade-offs)
 - [Future Development](#future-development-and-deployment)
 
 ## Essential Gems
@@ -31,6 +32,10 @@ There is one model that PGOS utilizes:
 
 The ```Order``` model handles the main functionality of our app, which is to view lists of all instances of Orders and to create new ones. The Order model creates new instances of work orders based on user input on the frontend, and will successful create an instance of an Order once all validations are passed.
 
+## Trade offs
+
+Although MySQL is simple and easy to use, postgreSQL allows for deployment of the app to heroku, which allows it ot be run on servers other than the local server. Secondly, Rails can render views for our app based on controller actions, but our app will behave as an API and will require requests from a frontend to which it will render JSON. Although rendering views through rails could be sufficient to meet the deliverables of this project, having a React front end will allow for a more dynamic UI, file structure organization, and overall, harnessing the power of React.
+
 ## Future Development and Deployment
 
 ### Secure Login
@@ -38,6 +43,10 @@ The ```Order``` model handles the main functionality of our app, which is to vie
 Adding password encryption, getting an SSL certificate, and handling sessions with JSON Web Tokens is the next feature to be implemented. This would also require the creation of a more complex relationship structure with a model for Users and a join table.
 
 ### Deployment
+
+Download Heroku CLI if you have not already by running ```brew tap heroku/brew && brew install heroku```
+
+Then, run ```heroku login``` which will prompt you to enter your credentials, which will be saved for future use.
 
 ```git init
 git add .
