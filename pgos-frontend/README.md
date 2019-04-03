@@ -9,11 +9,11 @@ This React web app was designed to be a responsive front-end used for creating a
 - [Testing](#testing)
 - [Structure](#structure)
 - [Components](#components)
-- [Future Development and Deployment](#future-development and deployment)
+- [Future Development and Deployment](#future-development-and-deployment)
 
 ## Libraries & Middleware
 
-PGOS was built using [create-react-app](https://github.com/facebook/create-react-app) and comes with the dependencies therein. [ReactTable](https://www.npmjs.com/package/react-table) is used for rendering the list of work orders from the database into appropriate columns and cells. [React StarRatingComponent](https://github.com/voronianski/react-star-rating-component) is used for rendering star icons next to work orders that have been marked as "Priority" [React Modal](https://reactcommunity.org/react-modal/) handles rendering a Modal that houses the order form for creating new work orders. Style prop allows Modal to transform size to accomodate adding or removing of form elements in the future. [React Moment](https://www.npmjs.com/package/react-moment) manages the display of current date on the home page.
+PGOS was built using [create-react-app](https://github.com/facebook/create-react-app) and comes with the dependencies therein. [ReactTable](https://www.npmjs.com/package/react-table) is used for rendering the list of work orders from the database into appropriate columns and cells. [React StarRatingComponent](https://github.com/voronianski/react-star-rating-component) is used for rendering star icons next to work orders that have been marked as "Priority". [React Modal](https://reactcommunity.org/react-modal/) handles rendering a Modal that houses the order form for creating new work orders. Style prop allows Modal to transform size to accomodate adding or removing of form elements in the future. [React Moment](https://www.npmjs.com/package/react-moment) manages the display of current date on the home page.
 
 ## Installation
 
@@ -26,7 +26,7 @@ In development, run ```npm test``` to open the test suite. Any time a file is ch
 
 ## Structure
 
-The top-level folder of Apostrophe includes a `public` folder, which holds the `index.html` file where the app is officially rendered by React, an `src` folder which holds the application itself, and then a few other files: the .gitignore, README, and package.json.
+The top-level folder of PGOS' frontend includes a `public` folder, which holds the `index.html` file where the app is officially rendered by React, an `src` folder which holds the application itself, and then a few other files: the .gitignore, README, and package.json.
 
 The `src` folder includes two main folders: `containers`, and `components` which organizes the bulk of the app's logic and content. Parent elements can be located in the `containers` folder and their Child elements are located in the `containers` folder. This is organized to ensure that as the project grows, components can be organized by their responsibilities. `index.js` handles how the app is mounted into the `index.html` file in the top-level folder.
 
@@ -66,4 +66,4 @@ git commit -m "Start with create-react-app"
 git push heroku master
 heroku open```
 
-Here, heroku will go through the build process with you and install npm, node, and yarn, as well as any other packages. 
+Here, heroku will go through the build process with you and install npm, node, and yarn, as well as any other packages.
