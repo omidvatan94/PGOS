@@ -58,7 +58,9 @@ Currently there are only Creating and Reading actions supported by this app. In 
 
 Download Heroku CLI if you have not already by running ```brew tap heroku/brew && brew install heroku```
 
-Then, run ```heroku login``` which will prompt you to enter your credentials, which will be saved for future use.```cd pgos-frontend
+Then, run ```heroku login``` which will prompt you to enter your credentials, which will be saved for future use.
+
+```cd pgos-frontend
 git init
 heroku create pgos-frontend --buildpack mars/create-react-app
 git add .
