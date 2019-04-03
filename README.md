@@ -1,6 +1,6 @@
 # PGOS
 
-PGOS is a frontend and backend application designed for managing orders for Perfectly Ground pre-packaged coffee. The frontend and backend can be found in their respective directories within this repository, and this README will go over architecture and installation instructions to run this app on your local environment.
+PGOS is a full stack application designed for managing orders for Perfectly Ground pre-packaged coffee. The frontend and backend can be found in their respective directories within this repository, and this README will go over architecture and installation instructions to run this app on your local environment.
 
 # PGOS: The Back End
 
@@ -128,7 +128,7 @@ Download Heroku CLI if you have not already by running ```brew tap heroku/brew &
 
 Then, run ```heroku login``` which will prompt you to enter your credentials, which will be saved for future use.
 
-`cd pgos-frontend
+``cd pgos-frontend
 git init
 heroku create pgos-frontend --buildpack mars/create-react-app
 git add .
